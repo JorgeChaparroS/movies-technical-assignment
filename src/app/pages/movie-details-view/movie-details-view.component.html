@@ -6,7 +6,7 @@
     </a>
 
     <section class="row justify-content-center">
-        <aside class="col-12 col-md-8 col-xl-4">
+        <article class="col-12 col-md-8 col-xl-4 mb-4 mb-xl-0">
             <div class="card">
                 <span *ngIf="isMovieInWatchList" class="on-watchlist-label text-center text bold">On My Watchlist</span>
                 <img class="card-img-top" [src]="movie?.imageSrc" [alt]="'Promotional image for ' + movie?.title">
@@ -31,16 +31,22 @@
                     </chaps-lib-button>
                 </div>
             </div>
-        </aside>
-        <aside class="col-12 col-xl-8">
-            <!-- <iframe
-                width="560"
-                height="315"
-                [src]="movie?.trailerLink"
-                frameborder="0"
-                allowfullscreen
-            ></iframe> -->
-            <youtube-player videoId="qj_AZ_FkPtQ" [width]="560" [height]="315" />
-        </aside>
+        </article>
+        <div #demoYouTubePlayer class="col-12 col-xl-8 d-flex flex-column align-items-center">
+            <h3 class="bold mb-3">Watch the trailer now!</h3>
+            <youtube-player 
+                [videoId]="youtubeVideoId"
+                [width]="videoWidth"
+                [height]="videoHeight"/>
+        </div>
+    </section>
+
+    <section class="row mt-3 mx-0 justify-content-center d-xl-none">
+        <a routerLink="/movies" class="col-8 col-md-4 col-xl-2">
+            <chaps-lib-button 
+                [buttonLabel]="'< Go back to movies'"
+                [buttonClass]="'outline-danger'">
+            </chaps-lib-button>
+        </a>
     </section>
 </div>

@@ -51,4 +51,8 @@ export class AppService {
   getMovie(): Movie|undefined {
     return this.movieSelected;
   }
+
+  getYoutubeVideoId(trailerURL: string): string {
+    return trailerURL.split('?v=')[1];
+  }
 }

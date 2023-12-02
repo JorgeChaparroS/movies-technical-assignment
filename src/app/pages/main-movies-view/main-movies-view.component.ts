@@ -29,6 +29,5 @@ export class MainMoviesViewComponent {
     } else {
       this.appService.addMovieToWatchList(movieId);
     }
-    console.log("Lista actual: ", localStorage.getItem('watchlist'));
   }
 }
