@@ -1,0 +1,23 @@
+@import "../styles.scss";
+
+.header-container {
+    height: 88px;
+    @media (min-width: $min-width-tablet) {
+        height: 70px;
+    }
+    @media (min-width: $min-width-desktop) {
+        height: 82px;
+    }
+}
+
+main {
+    min-height: calc(100vh - 88px - 108px);
+    // background: linear-gradient(to right, #ecc9c9, #f1a8a8);
+    background-color: floralwhite;
+    @media (min-width: $min-width-tablet) {
+        min-height: calc(100vh - 70px - 64px);
+    }
+    @media (min-width: $min-width-desktop) {
+        min-height: calc(100vh - 82px - 70px);
+    }
+}

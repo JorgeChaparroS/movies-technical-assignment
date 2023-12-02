@@ -1,0 +1,21 @@
+<div class="container">
+
+    <div class="row mb-4 justify-content-between">
+        <h3 class="bold mb-3 mb-md-0 col-12 col-md-5 col-xl-4">Available now: </h3>
+        <aside class="col-12 col-md-5 col-xl-4">
+            <chaps-lib-button 
+                [buttonLabel]="sortedByName ? 'Sort by name' : 'Sort by most recent release'"
+                [buttonClass]="'outline-danger'"
+                (click)="sorting()">
+            </chaps-lib-button>
+        </aside>
+    </div>
+
+    <section class="row">
+        <app-movie-thumbnail 
+            *ngFor="let movie of movies" 
+            class="col-12 col-md-6 col-xl-3 mb-3"
+            [movie]="movie"
+            (watchListEvent)="onWatchListEvent(movie?.id || 0)"></app-movie-thumbnail>
+    </section>
+</div>

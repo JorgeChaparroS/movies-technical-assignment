@@ -1,0 +1,11 @@
+@import "../../../styles.scss";
+
+header {
+    background-color: $red;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.3);
+    h1 {
+        color: $white;
+    }
+}

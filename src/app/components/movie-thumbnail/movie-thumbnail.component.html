@@ -1,0 +1,24 @@
+<div class="card movie-thumbnail">
+    <span *ngIf="isMovieInWatchList" class="on-watchlist-label text-center text">On My Watchlist</span>
+    <img class="card-img-top" [src]="movie?.imageSrc" alt="movie_image_{{movie?.title}}">
+    <div class="card-body">
+        <h6 class="card-text text-center">{{movie?.title}}</h6>
+    </div>
+    <article class="additional-info d-flex flex-column justify-content-center align-items-center">
+        <p class="text mb-3">{{movie?.duration}}</p>
+        <p class="text mb-3">{{movie?.genre}}</p>
+        <p class="text mb-3">{{movie?.releaseDate | date: 'longDate' }}</p>
+        <app-star-raiting [rating]="movie?.raiting || 0" class="mb-4"></app-star-raiting>
+        <chaps-lib-button 
+            class="mb-3"
+            [buttonLabel]="isMovieInWatchList ? 'Remove from watchlist' : 'Add to watchlist'"
+            [buttonClass]="'warning'"
+            (click)="onWatchListAction()">
+        </chaps-lib-button>
+        <chaps-lib-button
+            [buttonLabel]="'Details'"
+            [buttonClass]="'danger'"
+            (click)="onGoToDetails()">
+        </chaps-lib-button>
+    </article>
+</div>

@@ -1,0 +1,15 @@
+@import "../../../styles.scss";
+
+footer {
+    border-top: 2px dashed $black;
+    background-color: floralwhite;
+    img {
+        width: 18px;
+        @media (min-width: $min-width-tablet) {
+            width: 20px;
+        }
+        @media (min-width: $min-width-desktop) {
+            width: 25px;
+        }
+    }
+}
