@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
+To develop this application, the next thecnologies, dependencies and techniques for frontend development were used: 
+    - Modules
+    - Components
+    - Pipes
+    - Services
+    - Guards
+    - Lazy Loading
+    - Chaps Angular Lib (NPM dependency created by me to give the Theme to the application) 
+    - Bootstrap.
+
+
 ## Installation and project launching
 
 Type the next command  in a terminal (make sure you are at the right workspace): "git clone https://github.com/JorgeChaparroS/movies-technical-assignment". 
