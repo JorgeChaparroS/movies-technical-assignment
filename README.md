@@ -2,26 +2,27 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
-## Development server
+## Installation and project launching
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Type the next command  in a terminal (make sure you are at the right workspace): "git clone https://github.com/JorgeChaparroS/movies-technical-assignment". 
 
-## Code scaffolding
+In case you are not in main branch, type "git checkout main"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install dependencies by typing "npm i" (As you can see, all dependencies are compatible and there is no vulnerabilities so far).
 
-## Build
+Type one of the next commands to run the application locally: "npm run start" | "ng serve" | "ng s"
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Website
 
-## Running end-to-end tests
+In case you only want to see the application running, but do not want to install it and launch it in your machine, you can go on ""
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Purpose
 
-## Further help
+This application was developed to solve the next technical requirements: 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Technical Assignment Part 1](./src/assets/images/technicalAssignment1.png)
+![Technical Assignment Part 1](./src/assets/images/technicalAssignment2.png)
+
