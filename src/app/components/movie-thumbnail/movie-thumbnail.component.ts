@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Movie } from 'src/app/model/movie';
+import { AppService } from 'src/app/shared/service/app.service';
 
 @Component({
   selector: 'app-movie-thumbnail',
@@ -15,14 +16,15 @@ export class MovieThumbnailComponent implements OnInit {
 
   isMovieInWatchList = false;
 
-  constructor(private readonly router: Router) {}
+  constructor(private readonly router: Router,
+    private readonly appService: AppService) {}
 
   ngOnInit(): void {
-      const watchlist = JSON.parse(localStorage.getItem('watchlist') || '[]');
-      this.isMovieInWatchList = watchlist.includes(this.movie?.id);
+      this.isMovieInWatchList = this.appService.isMovieInWatchList(this.movie?.id || 0);
   }
 
   onGoToDetails(): void {
+    this.appService.setMovie(this.movie);
     this.router.navigate(['/movie-details'])
   }
 

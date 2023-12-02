@@ -24,13 +24,10 @@ export class MainMoviesViewComponent {
   }
 
   onWatchListEvent(movieId: number): void {
-    const moviesOnWatchList = localStorage.getItem('watchlist');
-    if (!moviesOnWatchList) {
-      this.appService.createWatchlist(movieId);
-    } else if (JSON.parse(localStorage.getItem('watchlist') || '').includes(movieId)) {
+    if (JSON.parse(localStorage.getItem('watchlist') || '[]').includes(movieId)) {
       this.appService.removeMovieFromWatchlist(movieId);
     } else {
-      this.appService.addAnotherMovieToWatchList(movieId);
+      this.appService.addMovieToWatchList(movieId);
     }
     console.log("Lista actual: ", localStorage.getItem('watchlist'));
   }

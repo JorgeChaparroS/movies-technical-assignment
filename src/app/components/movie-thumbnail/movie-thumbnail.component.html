@@ -1,5 +1,5 @@
 <div class="card movie-thumbnail">
-    <span *ngIf="isMovieInWatchList" class="on-watchlist-label text-center text">On My Watchlist</span>
+    <span *ngIf="isMovieInWatchList" class="on-watchlist-label text-center text bold">On My Watchlist</span>
     <img class="card-img-top" [src]="movie?.imageSrc" alt="movie_image_{{movie?.title}}">
     <div class="card-body">
         <h6 class="card-text text-center">{{movie?.title}}</h6>

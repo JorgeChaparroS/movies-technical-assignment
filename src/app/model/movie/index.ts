@@ -7,6 +7,5 @@ export interface Movie {
     genre: string;
     releaseDate: Date;
     trailerLink: string;
-    isInWatchList?: boolean;
     imageSrc: string;
 };

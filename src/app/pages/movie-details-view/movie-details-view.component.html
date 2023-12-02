@@ -1,2 +1,46 @@
-<p>movie-details-view works!</p>
-<a routerLink="/movies">Ir a todas las películas</a>
+<div class="container">
+    <a routerLink="/movies" class="row mb-5">
+        <chaps-lib-button class="col-8 col-md-4 col-xl-3" [buttonLabel]="'< Go back to movies'"
+            [buttonClass]="'outline-danger'">
+        </chaps-lib-button>
+    </a>
+
+    <section class="row justify-content-center">
+        <aside class="col-12 col-md-8 col-xl-4">
+            <div class="card">
+                <span *ngIf="isMovieInWatchList" class="on-watchlist-label text-center text bold">On My Watchlist</span>
+                <img class="card-img-top" [src]="movie?.imageSrc" [alt]="'Promotional image for ' + movie?.title">
+                <div class="card-body">
+                    <h5 class="card-title">{{movie?.title}}</h5>
+                    <p class="text m-0">{{movie?.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text text-center">Duration: {{ movie?.duration }}</li>
+                    <li class="list-group-item text text-center">Genre: {{ movie?.genre }}</li>
+                    <li class="list-group-item text text-center">Date released: {{ movie?.releaseDate | date: 'longDate' }}</li>
+                    <li class="list-group-item d-flex flex-column justify-content-center align-items-center">
+                        <p class="text m-0">Rating: {{movie?.raiting}}/10</p>
+                        <app-star-raiting [rating]="movie?.raiting || 0"></app-star-raiting>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <chaps-lib-button 
+                        [buttonLabel]="isMovieInWatchList ? 'Remove from watchlist' : 'Add to watchlist'"
+                        [buttonClass]="'danger'"
+                        (click)="onWatchlistChange()">
+                    </chaps-lib-button>
+                </div>
+            </div>
+        </aside>
+        <aside class="col-12 col-xl-8">
+            <!-- <iframe
+                width="560"
+                height="315"
+                [src]="movie?.trailerLink"
+                frameborder="0"
+                allowfullscreen
+            ></iframe> -->
+            <youtube-player videoId="qj_AZ_FkPtQ" [width]="560" [height]="315" />
+        </aside>
+    </section>
+</div>

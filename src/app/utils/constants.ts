@@ -5,7 +5,7 @@ export class Constants {
         {
             id: 1,
             title: 'Tenet',
-            description: 'Description: Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.', 
+            description: 'Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.', 
             raiting: 7.8,
             duration: '2h 30 min',
             genre: 'Action, Sci-Fi',

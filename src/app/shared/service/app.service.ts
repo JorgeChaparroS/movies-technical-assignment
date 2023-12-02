@@ -6,6 +6,8 @@ import { Movie } from 'src/app/model/movie';
 })
 export class AppService {
 
+  movieSelected: Movie|undefined;
+
   constructor() { }
 
   sortByReleaseDate(a: Movie, b: Movie): number {
@@ -24,12 +26,13 @@ export class AppService {
     }
   }
 
-  createWatchlist(movieId: number): void {
-    localStorage.setItem('watchlist', JSON.stringify([movieId]));
+  isMovieInWatchList(movieId: number): boolean {
+    const watchlist = JSON.parse(localStorage.getItem('watchlist') || '[]');
+    return watchlist.includes(movieId);
   }
 
-  addAnotherMovieToWatchList(movieId: number): void {
-    const watchlist = JSON.parse(localStorage.getItem('watchlist') || '');
+  addMovieToWatchList(movieId: number): void {
+    const watchlist = JSON.parse(localStorage.getItem('watchlist') || '[]');
     watchlist.push(movieId);
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
   }
@@ -39,5 +42,13 @@ export class AppService {
     const index = watchlist.findIndex((id: number) => id === movieId);
     watchlist.splice(index, 1);
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
+  }
+
+  setMovie(movie: Movie|undefined): void {
+    this.movieSelected = movie;
+  }
+
+  getMovie(): Movie|undefined {
+    return this.movieSelected;
   }
 }
