@@ -28,7 +28,7 @@ Navigate to `http://localhost:4200/`. The application will automatically reload 
 
 ## Website
 
-In case you only want to see the application running, but do not want to install it and launch it in your machine, you can go on ""
+In case you only want to see the application running, but do not want to install it and launch it in your machine, you can go on https://jorge-chaparros-cinema.netlify.app
 
 ## Purpose
 
